@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "omegajak.striptrease.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "AxeItemMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

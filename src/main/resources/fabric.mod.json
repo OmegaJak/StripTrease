@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "stripstrease",
+  "version": "${version}",
+
+  "name": "StripTrease",
+  "description": "Avoid accidentally stripping logs when using an axe",
+  "authors": [
+    "OmegaJak"
+  ],
+  "contact": {
+    "homepage": "https://github.com/OmegaJak",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+
+  "license": "MIT",
+  "icon": "assets/striptrease/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "omegajak.striptrease.StripTrease"
+    ],
+    "modmenu": [
+      "omegajak.striptrease.integration.ModMenuIntegration"
+    ]
+  },
+  "mixins": [
+    "striptrease.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.7.4",
+    "fabric": "*",
+    "minecraft": "1.16.x",
+    "cloth-config2": ">=4.9"
+  },
+  "suggests": {
+    "modmenu": "*"
+  }
+}

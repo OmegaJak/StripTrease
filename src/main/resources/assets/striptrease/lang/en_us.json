@@ -1,0 +1,8 @@
+{
+  "text.autoconfig.striptrease.title": "StripTrease Config",
+
+  "text.autoconfig.striptrease.option.useAxeStrippingMode": "Axe-in-Hand Stripping Mode",
+  "text.autoconfig.striptrease.option.useAxeStrippingMode.require_sneak": "Require Sneak",
+  "text.autoconfig.striptrease.option.useAxeStrippingMode.vanilla": "Vanilla",
+  "text.autoconfig.striptrease.option.useAxeStrippingMode.disable": "Disabled"
+}
