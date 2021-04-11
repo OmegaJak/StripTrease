@@ -23,6 +23,9 @@
     ],
     "modmenu": [
       "omegajak.striptrease.integration.ModMenuIntegration"
+    ],
+    "rei_plugins": [
+      "omegajak.striptrease.integration.REIPlugin"
     ]
   },
   "mixins": [
@@ -36,6 +39,7 @@
     "cloth-config2": ">=4.9"
   },
   "suggests": {
-    "modmenu": "*"
+    "modmenu": "*",
+    "RoughlyEnoughItems": ">=5.x"
   }
 }

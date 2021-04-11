@@ -20,7 +20,6 @@ import java.util.Optional;
 
 @Mixin(AxeItem.class)
 public abstract class AxeItemMixin implements LogStripper {
-    @Shadow @Final protected static Map<Block, Block> STRIPPED_BLOCKS;
 
     @Inject(at = @At("HEAD"), method = "useOnBlock(Lnet/minecraft/item/ItemUsageContext;)Lnet/minecraft/util/ActionResult;", cancellable = true)
     public void onAxeUseMixin(ItemUsageContext context, CallbackInfoReturnable<ActionResult> callbackInfo) {
@@ -30,11 +29,6 @@ public abstract class AxeItemMixin implements LogStripper {
             callbackInfo.setReturnValue(ActionResult.PASS);
             callbackInfo.cancel();
         }
-    }
-
-    @Nullable
-    public Optional<Block> getStrippedBlock(Block block) {
-        return Optional.of(STRIPPED_BLOCKS.get(block));
     }
 }
 

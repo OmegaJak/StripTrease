@@ -32,6 +32,10 @@ dependencies {
 	}
 
 	modImplementation "com.terraformersmc:modmenu:${project.mod_menu_version}"
+
+	modCompileOnly "me.shedaniel:RoughlyEnoughItems-api:${project.rei_version}"
+	modCompileOnly "me.shedaniel:RoughlyEnoughItems-default-plugin:${project.rei_version}"
+	modRuntime "me.shedaniel:RoughlyEnoughItems:${project.rei_version}"
 }
 
 processResources {

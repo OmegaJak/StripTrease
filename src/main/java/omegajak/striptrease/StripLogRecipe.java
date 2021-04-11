@@ -6,13 +6,13 @@ import net.minecraft.item.AxeItem;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.SpecialCraftingRecipe;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Pair;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
-import omegajak.striptrease.interfaces.LogStripper;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -30,7 +30,7 @@ public class StripLogRecipe extends SpecialCraftingRecipe {
     @Override
     public ItemStack craft(CraftingInventory inventory) {
         Pair<ItemStack, ItemStack> axeAndStrippable = getAxeAndStrippable(inventory).get();
-        Item stripped = ((LogStripper)axeAndStrippable.getLeft().getItem()).getStrippedBlock(((BlockItem)axeAndStrippable.getRight().getItem()).getBlock()).get().asItem();
+        Item stripped = ExposedAxeItem.getStrippedBlock((BlockItem)axeAndStrippable.getRight().getItem()).get().asItem();
         return new ItemStack(stripped);
     }
 
@@ -72,11 +72,10 @@ public class StripLogRecipe extends SpecialCraftingRecipe {
         Optional<ItemStack> optionalAxeStack = getAxe(inventory);
         if (!optionalAxeStack.isPresent()) return Optional.empty();
 
-        ItemStack axeStack = optionalAxeStack.get();
-        ArrayList<ItemStack> strippables = getStrippables(inventory, (AxeItem)axeStack.getItem());
+        ArrayList<ItemStack> strippables = getStrippables(inventory);
         if (strippables.size() != 1) return Optional.empty();
 
-        return Optional.of(new Pair<>(axeStack, strippables.get(0)));
+        return Optional.of(new Pair<>(optionalAxeStack.get(), strippables.get(0)));
     }
 
     private Optional<ItemStack> getAxe(CraftingInventory inventory) {
@@ -92,8 +91,8 @@ public class StripLogRecipe extends SpecialCraftingRecipe {
     }
 
     @NotNull
-    private ArrayList<ItemStack> getStrippables(CraftingInventory inventory, AxeItem axeItem) {
-        return getItemsMatchingPredicate(inventory, itemStack -> isStrippable(itemStack, axeItem));
+    private ArrayList<ItemStack> getStrippables(CraftingInventory inventory) {
+        return getItemsMatchingPredicate(inventory, ExposedAxeItem::isStrippable);
     }
 
     private ArrayList<ItemStack> getItemsMatchingPredicate(CraftingInventory inventory, Predicate<ItemStack> predicate) {
@@ -107,11 +106,8 @@ public class StripLogRecipe extends SpecialCraftingRecipe {
         return matching;
     }
 
-    private boolean isStrippable(ItemStack itemStack, AxeItem axe) {
-        return itemStack.getItem() instanceof BlockItem && getStrippedBlock((BlockItem)itemStack.getItem(), (LogStripper)axe).isPresent();
-    }
-
-    private Optional<Block> getStrippedBlock(BlockItem blockItem, LogStripper logStripper) {
-        return logStripper.getStrippedBlock(blockItem.getBlock());
+    @Override
+    public DefaultedList<Ingredient> getPreviewInputs() {
+        return null;
     }
 }
