@@ -7,6 +7,7 @@ import net.fabricmc.api.ModInitializer;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.SpecialRecipeSerializer;
 import omegajak.striptrease.config.ModConfig;
+import omegajak.striptrease.recipe.StripLogRecipe;
 
 import java.util.Random;
 

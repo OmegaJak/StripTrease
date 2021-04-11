@@ -8,7 +8,7 @@ import net.minecraft.item.AxeItem;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
-import omegajak.striptrease.ExposedAxeItem;
+import omegajak.striptrease.item.ExposedAxeItem;
 import omegajak.striptrease.StripTrease;
 
 import java.util.ArrayList;

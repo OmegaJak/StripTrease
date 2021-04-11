@@ -1,4 +1,4 @@
-package omegajak.striptrease;
+package omegajak.striptrease.item;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.*;

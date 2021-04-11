@@ -1,6 +1,5 @@
-package omegajak.striptrease;
+package omegajak.striptrease.recipe;
 
-import net.minecraft.block.Block;
 import net.minecraft.inventory.CraftingInventory;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.BlockItem;
@@ -13,6 +12,8 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.Pair;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
+import omegajak.striptrease.StripTrease;
+import omegajak.striptrease.item.ExposedAxeItem;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
