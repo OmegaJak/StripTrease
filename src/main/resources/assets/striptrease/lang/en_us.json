@@ -4,5 +4,9 @@
   "text.autoconfig.striptrease.option.useAxeStrippingMode": "Axe-in-Hand Stripping Mode",
   "text.autoconfig.striptrease.option.useAxeStrippingMode.require_sneak": "Require Sneak",
   "text.autoconfig.striptrease.option.useAxeStrippingMode.vanilla": "Vanilla",
-  "text.autoconfig.striptrease.option.useAxeStrippingMode.disable": "Disabled"
+  "text.autoconfig.striptrease.option.useAxeStrippingMode.disable": "Disabled",
+
+  "text.autoconfig.striptrease.option.addStripRecipe": "Log Strip Crafting Recipe",
+  "text.autoconfig.striptrease.option.addStripRecipe.@Tooltip[0]": "Add recipe to craft stripped logs using an axe",
+  "text.autoconfig.striptrease.option.addStripRecipe.@Tooltip[1]": "[Requires Restart]"
 }

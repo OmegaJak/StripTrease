@@ -14,6 +14,9 @@ public class ModConfig implements ConfigData {
     @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
     public UseAxeStrippingMode useAxeStrippingMode = UseAxeStrippingMode.REQUIRE_SNEAK;
 
+    @ConfigEntry.Gui.Tooltip(count = 2)
+    public boolean addStripRecipe = false;
+
     public enum UseAxeStrippingMode implements SelectionListEntry.Translatable {
         VANILLA,
         REQUIRE_SNEAK,

@@ -25,6 +25,7 @@ public class StripLogRecipe extends SpecialCraftingRecipe {
 
     @Override
     public boolean matches(CraftingInventory inventory, World world) {
+        if (!StripTrease.getCurrentConfig().addStripRecipe) return false;
         return getAxeAndStrippable(inventory).isPresent();
     }
 

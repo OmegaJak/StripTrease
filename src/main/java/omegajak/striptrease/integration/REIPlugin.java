@@ -36,6 +36,8 @@ public class REIPlugin implements REIPluginV0 {
 
     @Override
     public void registerRecipeDisplays(RecipeHelper recipeHelper) {
+        if (!StripTrease.getCurrentConfig().addStripRecipe) return;
+
         List<EntryStack> axeEntries = FilterEntryStacks(entryStack -> entryStack.getItem() instanceof AxeItem).collect(Collectors.toList());
         Stream<EntryStack> strippableEntries = FilterEntryStacks(entryStack -> ExposedAxeItem.isStrippable(entryStack.getItem()));
 
@@ -44,7 +46,7 @@ public class REIPlugin implements REIPluginV0 {
             inputs.add(axeEntries);
             inputs.add(Collections.singletonList(EntryStack.create(strippableEntry.getItemStack())));
 
-            Block stripped = ExposedAxeItem.getStrippedBlock((BlockItem)strippableEntry.getItem()).get();
+            Block stripped = ExposedAxeItem.getStrippedBlock((BlockItem) strippableEntry.getItem()).get();
             ItemStack outputStack = new ItemStack(stripped.asItem(), 1);
             List<EntryStack> output = Collections.singletonList(EntryStack.create(outputStack));
             recipeHelper.registerDisplay(new DefaultCustomDisplay(null, inputs, output));
