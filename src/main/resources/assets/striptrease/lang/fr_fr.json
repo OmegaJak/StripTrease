@@ -1,0 +1,12 @@
+{
+  "text.autoconfig.striptrease.title": "Configuration StripTrease",
+
+  "text.autoconfig.striptrease.option.useAxeStrippingMode": "Mode d'écorchage à la hache",
+  "text.autoconfig.striptrease.option.useAxeStrippingMode.require_sneak": "Accroupi",
+  "text.autoconfig.striptrease.option.useAxeStrippingMode.vanilla": "Vanilla",
+  "text.autoconfig.striptrease.option.useAxeStrippingMode.disable": "Désactivé",
+
+  "text.autoconfig.striptrease.option.addStripRecipe": "Craft pour la création de bandes de bois",
+  "text.autoconfig.striptrease.option.addStripRecipe.@Tooltip[0]": "Ajouter un craft",
+  "text.autoconfig.striptrease.option.addStripRecipe.@Tooltip[1]": "[Nécessite de relancer le jeu]"
+}
