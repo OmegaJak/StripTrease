@@ -37,7 +37,7 @@ public class StripLogRecipe extends SpecialCraftingRecipe {
     }
 
     @Override
-    public DefaultedList<ItemStack> getRemainingStacks(CraftingInventory inventory) {
+    public DefaultedList<ItemStack> getRemainder(CraftingInventory inventory) {
         DefaultedList<ItemStack> remainingStacks = DefaultedList.ofSize(inventory.size(), ItemStack.EMPTY);
 
         Optional<ItemStack> optionalAxeStack = getAxe(inventory);
@@ -109,7 +109,7 @@ public class StripLogRecipe extends SpecialCraftingRecipe {
     }
 
     @Override
-    public DefaultedList<Ingredient> getPreviewInputs() {
+    public DefaultedList<Ingredient> getIngredients() {
         return null;
     }
 }
